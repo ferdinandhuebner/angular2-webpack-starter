@@ -1,5 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
 import {UsersService} from "../services/usersService";
+import {RouteConfig, Router} from 'angular2/router';
 
 @Component({
   selector: 'users',
@@ -32,8 +33,7 @@ import {UsersService} from "../services/usersService";
         <td class="mdl-data-table__cell--non-numeric">{{user.roles.join(', ')}}</td>
       </tr>
       </tbody>
-    </table>
-  `
+    </table>`
 })
 export class Users {
   private userslist;
