@@ -4,7 +4,7 @@ import {AppState} from '../app.service';
 import {Title} from './title';
 import {XLarge} from './x-large';
 
-import {UsersService} from "../services/usersService";
+// import {UsersService} from "../services/usersService";
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -14,7 +14,8 @@ import 'rxjs/add/operator/map';
   selector: 'home',  // <home></home>
   // We need to tell Angular's Dependency Injection which providers are in our app.
   providers: [
-    Title, UsersService
+    Title
+    // Title, UsersService
   ],
   // We need to tell Angular's compiler which directives are in our template.
   // Doing so will allow Angular to attach our behavior to an element
@@ -35,7 +36,8 @@ export class Home implements OnInit {
   private date: Date;
   private userslist;
   // TypeScript public modifiers
-  constructor(public appState: AppState, public title: Title, users: UsersService) {
+  // constructor(public appState: AppState, public title: Title, users: UsersService) {
+  constructor(public appState: AppState, public title: Title) {
     setInterval(() => this.date = new Date(), 1000);
     //users.get().subscribe(data => this.userslist = data.users);
   }
