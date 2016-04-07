@@ -2,6 +2,7 @@
  * Providers provided by Angular
  */
 import {bootstrap} from 'angular2/platform/browser';
+
 /*
 * Platform and Environment
 * our providers/directives/pipes

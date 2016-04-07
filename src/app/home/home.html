@@ -1,8 +1,13 @@
 <div>
   <span x-large>Your Content Here</span>
   <form (ngSubmit)="submitState(localState.value)">
-    <input type="text" [value]="localState.value" (input)="localState.value = $event.target.value" autofocus>
-    <button>Submit Value</button>
+    <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text"
+             [value]="localState.value"
+             (input)="localState.value = $event.target.value"
+             autofocus>
+    </div>
+    <button class="mdl-button mdl-js-button mdl-button--raised">Submit Value</button>
   </form>
   <!--
     Rather than wiring up two-way data-binding ourselves with [value] and (input)
@@ -12,6 +17,28 @@
   For hot module reloading run
   <pre>npm run start:hmr</pre>
   <hr>
-  <pre>this.localState = {{ localState | json }}</pre>
+  <pre class="language-markup">this.localState = {{ localState | json }}</pre>
+  <p class="home-date">{{ date | date:'medium'}}</p>
+
+  <h1>Users</h1>
+  <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp">
+    <thead>
+    <tr>
+      <th>id</th>
+      <th class="mdl-data-table__cell--non-numeric">Username</th>
+      <th class="mdl-data-table__cell--non-numeric">Roles</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="#user of userslist" [class.superuser]="user.superuser">
+      <td>{{user.id}}</td>
+      <td class="mdl-data-table__cell--non-numeric" (click)="onClick(user.username)">
+        {{user.username}}
+        <span *ngIf="user.superuser">(superuser)</span>
+      </td>
+      <td class="mdl-data-table__cell--non-numeric">{{user.roles.join(', ')}}</td>
+    </tr>
+    </tbody>
+  </table>
 
 </div>

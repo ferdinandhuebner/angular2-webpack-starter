@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": 34,
+      "username": "Batman",
+      "roles": ["admin", "user"]
+    },
+    {
+      "id": 67,
+      "username": "Spiderman",
+      "roles": ["user"]
+    },
+    {
+      "id": 167,
+      "username": "The Dude",
+      "roles": ["user"],
+      "superuser": true
+    }
+  ]
+}
