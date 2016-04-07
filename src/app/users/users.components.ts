@@ -12,21 +12,25 @@ import {UsersService} from "../services/usersService";
     }
   `],
   template: `
-    <h1>Users</h1>
-    <table class="table">
+    <h3>Users</h3>
+    <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp">
       <thead>
-        <tr>
-          <th>id</th>
-          <th>Username</th>
-          <th>Roles</th>
-        </tr>
+      <tr>
+        <th>id</th>
+        <th class="mdl-data-table__cell--non-numeric">Username</th>
+        <th class="mdl-data-table__cell--non-numeric">Roles</th>
+      </tr>
       </thead>
       <tbody>
-        <tr *ngFor="#user of userslist" [class.superuser]="user.superuser">
-          <td>{{user.id}}</td>
-          <td (click)="onClick(user.username)">{{user.username}} <span *ngIf="user.superuser">(superuser)</span></td>
-          <td>{{user.roles.join(', ')}}</td>
-        </tr>
+      <tr *ngFor="#user of userslist" [class.superuser]="user.superuser">
+        <td>{{user.id}}</td>
+        <!--<td class="mdl-data-table__cell&#45;&#45;non-numeric" (click)="onClick(user.username)">-->
+        <td class="mdl-data-table__cell--non-numeric">
+          <span *ngIf="user.superuser"><i class="material-icons" style="font-size: 18px">security</i></span>
+          {{user.username}}
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">{{user.roles.join(', ')}}</td>
+      </tr>
       </tbody>
     </table>
   `
@@ -34,6 +38,6 @@ import {UsersService} from "../services/usersService";
 export class Users {
   private userslist;
   constructor(users: UsersService) {
-    this.userslist = users.get().subscribe(data => this.userslist = data.users);
+    users.get().subscribe(data => this.userslist = data.users);
   }
 }

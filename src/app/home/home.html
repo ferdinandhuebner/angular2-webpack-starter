@@ -20,25 +20,25 @@
   <pre class="language-markup">this.localState = {{ localState | json }}</pre>
   <p class="home-date">{{ date | date:'medium'}}</p>
 
-  <h1>Users</h1>
-  <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp">
-    <thead>
-    <tr>
-      <th>id</th>
-      <th class="mdl-data-table__cell--non-numeric">Username</th>
-      <th class="mdl-data-table__cell--non-numeric">Roles</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="#user of userslist" [class.superuser]="user.superuser">
-      <td>{{user.id}}</td>
-      <td class="mdl-data-table__cell--non-numeric" (click)="onClick(user.username)">
-        {{user.username}}
-        <span *ngIf="user.superuser">(superuser)</span>
-      </td>
-      <td class="mdl-data-table__cell--non-numeric">{{user.roles.join(', ')}}</td>
-    </tr>
-    </tbody>
-  </table>
+  <!--<h1>Users</h1>-->
+  <!--<table class="mdl-data-table mdl-js-data-table  mdl-shadow&#45;&#45;2dp">-->
+    <!--<thead>-->
+    <!--<tr>-->
+      <!--<th>id</th>-->
+      <!--<th class="mdl-data-table__cell&#45;&#45;non-numeric">Username</th>-->
+      <!--<th class="mdl-data-table__cell&#45;&#45;non-numeric">Roles</th>-->
+    <!--</tr>-->
+    <!--</thead>-->
+    <!--<tbody>-->
+    <!--<tr *ngFor="#user of userslist" [class.superuser]="user.superuser">-->
+      <!--<td>{{user.id}}</td>-->
+      <!--<td class="mdl-data-table__cell&#45;&#45;non-numeric" (click)="onClick(user.username)">-->
+        <!--{{user.username}}-->
+        <!--<span *ngIf="user.superuser">(superuser)</span>-->
+      <!--</td>-->
+      <!--<td class="mdl-data-table__cell&#45;&#45;non-numeric">{{user.roles.join(', ')}}</td>-->
+    <!--</tr>-->
+    <!--</tbody>-->
+  <!--</table>-->
 
 </div>

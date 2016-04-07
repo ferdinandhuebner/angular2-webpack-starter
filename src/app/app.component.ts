@@ -5,6 +5,7 @@ import {Component} from 'angular2/core';
 import {RouteConfig, Router} from 'angular2/router';
 
 import {Home} from './home';
+import {Users} from "./users/users.components";
 import {AppState} from './app.service';
 import {RouterActive} from './router-active';
 
@@ -71,6 +72,7 @@ import {RouterActive} from './router-active';
 @RouteConfig([
   { path: '/',      name: 'Index', component: Home, useAsDefault: true },
   { path: '/home',  name: 'Home',  component: Home },
+  { path: "/users", name: "Users", component: Users},
   // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
   { path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') },
 ])

@@ -37,7 +37,7 @@ export class Home implements OnInit {
   // TypeScript public modifiers
   constructor(public appState: AppState, public title: Title, users: UsersService) {
     setInterval(() => this.date = new Date(), 1000);
-    users.get().subscribe(data => this.userslist = data.users);
+    //users.get().subscribe(data => this.userslist = data.users);
   }
 
   ngOnInit() {
